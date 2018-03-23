@@ -2,6 +2,7 @@ package me.wolfkingnick;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -14,12 +15,13 @@ public class ShipMaker {
 
 	List<String> infaction = new ArrayList<>();
 	List<String> haslist = new ArrayList<>();
+	List<String> notinfaction = new ArrayList<>();
 	
 	
 	@EventHandler
 	public void onjoinlistcreater(PlayerJoinEvent e) {
 		
-		String playername = e.getPlayer().getName();
+		UUID playername = e.getPlayer().getUniqueId();
 		
 		if(haslist.contains(playername)) {
 			
@@ -31,7 +33,7 @@ public class ShipMaker {
 			 DataHolder nplayer = new DataHolder();
 			 
 			 
-		((Playerdata) nplayer.Playerdata).Playernameacess(e.getPlayer().getName());
+		((Playerdata) nplayer.Playerdata).setname(e.getPlayer().getUniqueId());
 			
 			haslist.add(e.getPlayer().getName());
 		

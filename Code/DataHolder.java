@@ -1,8 +1,12 @@
+package me.wolfkingnick;
+
+import java.util.UUID;
+
 public class DataHolder {
 	
 	class Playerdata { 
 //playername
-		String pname;
+		UUID pname;
 //faction name
 		String title;
 //member leader moderator
@@ -10,9 +14,9 @@ public class DataHolder {
 //admin staff
 		String prank;
 //money
-		Int money;
+		int money;
 		
-		public Playerdata(String pname, String title, String frank, String prank, Int money) {
+		public Playerdata(UUID pname, String title, String frank, String prank, int money) {
 			this.pname = pname;
 		    	this.title = title;
 		    	this.frank = frank;
@@ -20,7 +24,7 @@ public class DataHolder {
 		    	this.money = money;
 		}
 		
-		public void setname(String playername) { this.pname = playername; }
+		public void setname(UUID playername) { this.pname = playername; }
 		 
 		public void settitle(String title) { this.title = title; }
 		 
@@ -28,11 +32,11 @@ public class DataHolder {
 		 
 		public void setprank(String playerrank) { this.prank = playerrank; }
 
-		public void addmoney(Int money) { this.money = this.money + money; }
+		public void addmoney(int money) { this.money = this.money + money; }
 
-		public void setmoney(Int money) { this.money = money; }
+		public void setmoney(int money) { this.money = money; }
 
-		public void removemoney(Int money) { this.money = this.money - money; }
+		public void removemoney(int money) { this.money = this.money - money; }
 
 		public String getname() { return this.pname; }
 		
@@ -42,7 +46,7 @@ public class DataHolder {
 
 		public String getprank() { return this.prank; }
 
-		public Int getmoney() {return this.money; }
+		public int getmoney() {return this.money; }
 
 		public void Playerdataacess(String name, String title, String factionrank, String playerrank) {
 			this.pname = name;
